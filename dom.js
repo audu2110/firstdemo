@@ -345,3 +345,32 @@ function onSubmit(e) {
     emailInput.value = '';
   }
 }
+
+
+
+
+//  LARGE SCALE
+
+
+const myForm = document.querySelector('#my-form');
+const userList = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(event) {
+  event.preventDefault();
+  var name=event.target.usrName.value;
+  var email=event.target.emalid.value;
+  
+  
+    let obj={
+        name,
+        email
+    };
+    localStorage.setItem(obj.email,JSON.stringify(obj));
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(`${name}: ${email}`));
+    li.innerHTML = `<strong>${name}</strong>: ${email}`;
+    userList.appendChild(li);
+
+}
