@@ -65,3 +65,63 @@ for(var i=0;i<odd.length;i++){
     odd[i].style.backgroundColor='brown';
 
 }
+// Traversing THE DOM
+var itemsList=document.querySelector('#items');
+
+// parentNode
+console.log(itemsList.parentNode);
+itemsList.parentNode.style.backgroundColor='#f4f4f4';
+console.log(itemsList.parentNode.parentNode.parentNode);
+
+// parentElement
+console.log(itemsList.parentElement);
+itemsList.parentElement.style.backgroundColor='#f4f4f4';
+console.log(itemsList.parentElement.parentElement.parentElement);
+
+// childNodes
+console.log(itemsList.childNodes);
+
+console.log(itemsList.children);
+console.log(itemsList.children[1]);
+itemsList.children[1].style.backgroundColor='yellow';
+
+// firstChild
+console.log(itemsList.firstChild);
+console.log(itemsList.firstElementChild);
+itemsList.firstElementChild.textContent='Hello 1';
+
+// lastChild
+console.log(itemsList.lastChild);
+console.log(itemsList.lastElementChild);
+itemsList.lastElementChild.textContent='Hello 4';
+
+// nextSilbling
+console.log(itemsList.nextSibling);
+console.log(itemsList.nextElementSibling);
+
+// previousSibling
+console.log(itemsList.previousSibling);
+console.log(itemsList.previousElementSibling);
+itemsList.previousElementSibling.style.color='green';
+
+// createElement
+
+// Create a div
+
+var newDiv=document.createElement('div');
+newDiv.className='hello';
+newDiv.id='hello1';
+newDiv.setAttribute('title','Hello Div');
+var newDivText=document.createTextNode('Hello World');
+newDiv.appendChild(newDivText);
+var container=document.querySelector('header .container');
+var h1=document.querySelector('header h1');
+console.log(newDiv);
+container.insertBefore(newDiv,h1);
+
+var newli= document.createElement('li');
+newli.className='hello';
+newli.id='hello1';
+var newlitext=document.createTextNode('Hello world');
+newli.appendChild(newlitext);
+console.log(newli);
